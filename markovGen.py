@@ -24,12 +24,11 @@ def main():
 	firstOrder = dict()
 	secondOrder = dict()
 
-	text = setupText()
+	first, text = setupText()
 
+	first = makeDicts(firstOrder, secondOrder, text, first)
 
-	#makeDicts(firstOrder, secondOrder, text)
-
-	#buildChain(firstOrder, secondOrder)
+	buildChain(firstOrder, secondOrder, first)
 
 	
 
@@ -39,54 +38,43 @@ def main():
 
 def setupText():
 	feedstock = readFile()
-	text = prepareText(feedstock)
+	first = getFirstAndLast(feedstock)
+	return first, feedstock.lower().split()
 
 def readFile():
 	f = open('taylor.txt', 'r')
 	txt = f.read()
 	return txt
 
-
-def prepareText(txt):
+def getFirstAndLast(txt):
 
 	sent = txt.lower().split('.')
-
-
 	first = []
-	last = []
+	#last = []
 
 	for each in sent:
 		each = each.split()
 		try:
 			first.append(each[0])
-			last.append(each[-1])
+			#last.append(each[-1])
 		except:
 			pass
-	print first
-	print last
 
-
-	#print first
-
-	#print last
-	
-
-	
-	#return text.lower().split()
-
-	
+	return first 
 
 
 
 
 
 ''' These functions will build the chain ''' 
-def buildChain(firstOrder, secondOrder):
-	firstWord = "it"
-	secondWord = "is"
+def buildChain(firstOrder, secondOrder, first):
+
+	firstWord = getNextWord(first)
+	secondWord = getNextWord(firstOrder[firstWord])
+	
 	newT = firstWord + " " + secondWord
 
-	for i in xrange(50):
+	for i in xrange(45):
 		try:
 			newD = merge(firstOrder,  secondOrder,firstWord, secondWord)
 			firstWord = secondWord
@@ -130,19 +118,35 @@ def mergeLists(newD, list1, list2):
 	
 ''' These functions will build the dictionary '''
 
-def makeDicts(firstOrder, secondOrder, text):
+def makeDicts(firstOrder, secondOrder, text, first):
 	fillDicts(firstOrder, secondOrder, text)
 	toFreqDict(firstOrder)
 	toFreqDict(secondOrder)
+	first = toFreqList(first)
+	return first
+
+	
+	#toFreqDict(first)
+
+
 
 def add(chainDict, word1, word2):
 	if word1 not in chainDict.keys():
 		chainDict[word1] = list()
 	chainDict[word1].append(word2)
+
+
+
 def toFreqDict(fDict):
 	for each in fDict:
 		tmpL = fDict[each]
-		fDict[each] = {x:tmpL.count(x) for x in tmpL}
+		fDict[each] = toFreqList(tmpL)
+
+def toFreqList(fList):
+	fList = {x:fList.count(x) for x in fList}
+	return fList
+
+
 def fillDicts(firstOrder, secondOrder, text):
 	for i in xrange(len(text)-1):
 		add(firstOrder, text[i], text[i+1])
@@ -156,12 +160,6 @@ def fillDicts(firstOrder, secondOrder, text):
 		#	firstOrder[eachK] = {x:eachV.count(x) for x in eachV}
 
 	
-
-def test(firstOrder, secondOrder):
-	first = "taylor"
-	second = "series"
-
-
 
 
 if __name__ == '__main__':
