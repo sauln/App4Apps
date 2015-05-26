@@ -1,0 +1,31 @@
+crawler:
+
+http://doc.scrapy.org/en/0.24/intro/tutorial.html#intro-tutorial
+ 1   Create a new Scrapy project
+ 2   Define the Items you will extract
+ 3   Write a spider to crawl a site and extract Items
+ 4   Write an Item Pipeline to store the extracted Items
+
+ 
+ Origins of financial pages are:
+ https://play.google.com/store/apps/category/FINANCE/collection/topselling_paid?hl=en
+ todo: will this work tomorrow?
+ 
+ the link is here:
+ <a class="title" href="/store/apps/details?id=com.sagemilk.property_casualty" title="Property &amp; Casualty Agent Prep"> 57.    Property &amp; Casualty Agent Prep  <span class="paragraph-end"></span></a>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Descriptions are found inside of 
+ <div class="id-app-orig-desc"> description </div>
+ 
+ 
+Title is found inside
+ <title id="main-title"> title </title>
+ 
+ 
+ 

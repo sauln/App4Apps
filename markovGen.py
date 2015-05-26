@@ -42,7 +42,7 @@ def setupText():
 	return first, feedstock.lower().split()
 
 def readFile():
-	f = open('taylor.txt', 'r')
+	f = open('corpus.txt', 'r')
 	txt = f.read()
 	return txt
 
