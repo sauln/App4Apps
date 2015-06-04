@@ -23,11 +23,8 @@ def main():
 
 	firstOrder = dict()
 	secondOrder = dict()
-
 	first, text = setupText()
-
 	first = makeDicts(firstOrder, secondOrder, text, first)
-
 	buildChain(firstOrder, secondOrder, first)
 
 	
