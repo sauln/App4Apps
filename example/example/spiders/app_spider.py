@@ -1,11 +1,14 @@
 import scrapy
+from example.items import AppItem
 
 class AppSpider(scrapy.Spider):
-	name = "apper"
-	allowed_domains = ["play.google.com"]
-	start_urls = ["http://www.play.google.com"]
+    name = "apper"
+    allowed_domains = ["play.google.com"]
+    start_urls = ["https://play.google.com/store/apps/category/FINANCE"]
 	
-	def parse(self, response):
-		filename = response.url.split("/")[-2]
-		with open(filename, 'wb') as f:
-			f.write(response.body)
+    def parse(self, response):
+        for sel in response.xpath('//*[contains(@class, "description")]'):
+            item = AppItem()
+            item['desc'] = (sel.xpath('text()').extract())[0]
+
+            print item['desc']

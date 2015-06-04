@@ -8,11 +8,7 @@
 import scrapy
 
 
-class ExampleItem(scrapy.Item):
-	title = scrapy.Field()
-	desc = scrapy.Field()
-	hlink = scrapy.Field()
-	
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class AppItem(scrapy.Item):
+    title = scrapy.Field()
+    desc = scrapy.Field()
+    hlink = scrapy.Field()
