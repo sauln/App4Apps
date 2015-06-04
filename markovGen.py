@@ -25,13 +25,18 @@ def main():
 	secondOrder = dict()
 	first, text = setupText()
 	first = makeDicts(firstOrder, secondOrder, text, first)
-	buildChain(firstOrder, secondOrder, first)
+	print buildChain(firstOrder, secondOrder, first)
 
 	
 
 
 ''' These functions will setup the feedstock'''
-
+def generate():
+    firstOrder = dict()
+    secondOrder = dict()
+    first, text = setupText()
+    first = makeDicts(firstOrder, secondOrder, text, first)
+    return buildChain(firstOrder, secondOrder,first)
 
 def setupText():
 	feedstock = readFile()
@@ -81,7 +86,7 @@ def buildChain(firstOrder, secondOrder, first):
 			break
 		#print secondWord
 
-	print newT
+	return newT
 
 def getNextWord(newD):
 	''' Given a dictionary of words and frequencies, 
