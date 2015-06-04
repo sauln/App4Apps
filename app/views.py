@@ -11,5 +11,5 @@ def genNew():
 	generated_text = "a whole bunch of words"
 
 
-	render_template("generator.html", generated_text)
+	return render_template("generator.html", generated_text=generated_text)
 
