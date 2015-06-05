@@ -1,18 +1,20 @@
 
 #this module will take a markov transition dictionary and build a chain from it.
 
-
+import random
 
 
 
 def buildChain(firstOrder, secondOrder, first):
-
 	#these are the seed words
 	firstWord = getNextWord(first)
 	secondWord = getNextWord(firstOrder[firstWord])
 	
 	newText = firstWord + " " + secondWord
 
+	
+	
+	
 	for i in xrange(45):
 		try:
 			newD = merge(firstOrder,  secondOrder, firstWord, secondWord)
@@ -52,10 +54,8 @@ def getNextWord(newD):
 		
 def merge(firstOrder, secondOrder, word2, word1):
 	''' This will merge the first and second order dictionaries of the specific words'''
-	list1 = firstOrder[word1]
-	list2 = secondOrder[word2]
 	
-	newD = mergeLists(list1, list2)
+	newD = mergeLists(firstOrder[word1], secondOrder[word2])
 	return newD
 
 
@@ -63,9 +63,9 @@ def merge(firstOrder, secondOrder, word2, word1):
 	
 def mergeLists(list1, list2):
 
-
 	newDict = dict()
 	''' create a new dictionary of frequencies based of two inputs ''' 
+	#so naive
 	for each in list1:
 		if each in list2:
 			newDict[each] = list1[each]*list2[each]

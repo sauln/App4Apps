@@ -1,3 +1,5 @@
-__all__ = ['markovGen']
+__all__ = ['chain_builder', 'transition_builder']
 
-import markovGen
+import chain_builder, transition_builder
+
+

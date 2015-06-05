@@ -1,5 +1,10 @@
 from app import app, render_template
-import markovGen as mg
+import markov.transition_builder as tran
+import markov.chain_builder as chain
+
+
+
+
 
 @app.route('/')
 def home():
@@ -9,8 +14,10 @@ def home():
 	
 @app.route('/gen')
 def genNew():
-	generated_text = mg.generate()
+	
 
+	generated_text = chain.buildChain(
+		tran.firstOrder, tran.secondOrder, tran.first)
 
 	return render_template("generator.html", generated_text=generated_text)
 
