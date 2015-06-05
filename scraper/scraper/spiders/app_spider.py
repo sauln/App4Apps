@@ -1,5 +1,5 @@
 import scrapy
-from example.items import AppItem
+from scraper.items import AppItem
 
 class AppSpider(scrapy.Spider):
     name = "apper"
