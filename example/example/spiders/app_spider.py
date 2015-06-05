@@ -9,6 +9,5 @@ class AppSpider(scrapy.Spider):
     def parse(self, response):
         for sel in response.xpath('//*[contains(@class, "description")]'):
             item = AppItem()
-            item['desc'] = (sel.xpath('text()').extract()
-
+            item['desc'] = sel.xpath('text()').extract()[0]
             print item['desc']
