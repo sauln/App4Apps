@@ -6,8 +6,8 @@ import markov.chain_builder as chain
 
 
 
-	
-@app.route('/')	
+@app.route('/')
+@app.route('/index')	
 @app.route('/gen')
 def genNew():
 	
