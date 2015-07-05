@@ -8,10 +8,15 @@ import markov.chain_builder as chain
 
 	
 @app.route('/')	
-@app.route('/gen')
-def genNew():
-	
+def home():
+	return render_template("home_page.html")
 
+
+
+
+@app.route('/gen')
+def generator():
+	
 	generated_text = chain.buildChain(
 		tran.firstOrder, tran.secondOrder, tran.first)
 

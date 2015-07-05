@@ -5,10 +5,6 @@ def setupText():
 	return first, text
 
 
-
-	
-
-
 def getFirstWords(txt):
 	firstLetters = []
 	#split by sentences
@@ -24,15 +20,6 @@ def getFirstWords(txt):
 
 	return firstLetters 
 
-
-
-
-
-#return buildChain(firstOrder, secondOrder,first)	
-
-	
-	
-	
 
 def generate():
     firstOrder = dict()
@@ -88,4 +75,4 @@ firstOrder = dict()
 secondOrder = dict()
 		
 first = makeDicts(firstOrder, secondOrder, text, first)
-
+print "finished"
