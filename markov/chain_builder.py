@@ -30,7 +30,7 @@ def getNextWord(newD):
 	this will generate a new word by random number '''
 	total = 0
 	newTotal = 0
-	print newD
+
 	
 	for each in newD:
 		total += newD[each]
