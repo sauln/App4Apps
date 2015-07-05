@@ -56,7 +56,10 @@ def toFreqList(fList):
 	return fList
 
 def readFile():
-	f = open('corpus/corpus.txt', 'r')
+	try:
+		f = open('corpus/corpus.txt', 'r')
+	else:
+		f = open('../../home/saulgill/saulgill-site/corpus/corpus.txt', 'r')
 	txt = f.read()
 	return txt
 
