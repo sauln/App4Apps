@@ -27,11 +27,11 @@ nav ul li {
   display: inline-block;
   list-style-type: none;
       
-  /*-webkit-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
-  transition: all 0.2s; */
+  transition: all 0.2s;
 }
      
 nav > ul > li > a > .caret {
@@ -83,11 +83,11 @@ nav > ul > li > div {
   visibility: hidden;
   z-index: 100;
   
-  /*-webkit-transiton: opacity 0.2s;
+  -webkit-transiton: opacity 0.2s;
   -moz-transition: opacity 0.2s;
   -ms-transition: opacity 0.2s;
   -o-transition: opacity 0.2s;
-  -transition: opacity 0.2s;*/
+  -transition: opacity 0.2s;
 }
 
 nav > ul > li:hover > div {
