@@ -59,7 +59,12 @@ def readFile():
 	#try:
 	#	f = open('corpus/corpus.txt', 'r')
 	#except:
-	f = open('../../home/saulgill/saulgill-site/corpus/corpus.txt', 'r')
+	try:
+		f = open('../../home/saulgill/saulgill-site/corpus/corpus.txt', 'r')
+	except:
+		f = open('corpus/corpus.txt', 'r')
+		pass
+	
 	txt = f.read()
 	return txt
 
