@@ -6,18 +6,14 @@
 	</head>
 	<body>
 		<div>	
-			<h1>App4Apps<h1><br>
+			<h2 id="site_name">App4Apps<h2><br>
 		<div>
-		<nav>
+		<nav id="nav_bar">
 			<ul>
-				<li><a href="/index">Home</a></li>
-				<li><a href="/gen">Generator</a></li>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('generator') }}">Generator</a></li>
 			</ul>
 		</nav>
-		<button onclick="javascript:location.reload(true)">Click Me!</button>
-
-		
-		
 		<hr>
 		{% block content %}
 		

@@ -5,7 +5,7 @@ import markov.chain_builder as chain
 
 
 
-
+@app.route('/index')
 @app.route('/')	
 def home():
 	return render_template("home_page.html")

@@ -1,5 +1,5 @@
-nav {
-    background-color: #fff;
+#nav_bar {
+    /*background-color: #fff;
     border: 1px solid #dedede;
     border-radius: 4px;
     box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.555);
@@ -7,15 +7,29 @@ nav {
     display: block;
     margin: 8px 22px 8px 22px;
     overflow: hidden;
-    width: 90%;
+    width: 90%;*/
+    width: 550px;
+    height: 35px;
+    font-size: 16px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 3px 2px 3px #333333;
+    background-color: #8AD9FF;
+        border-radius: 8px;
 }
 
-nav ul {
-    margin: 0;
-    padding: 0;
+#site_name {
+
 }
 
-nav ul li {
-    display: inline-block;
-    list-style-type: none;
+#nav_bar ul {
+    height: auto;
+    padding: 8px 0px;
+    margin: 0px;
+}
+
+#nav_bar li {
+    display: inline;
+    padding: 20px;
 }
