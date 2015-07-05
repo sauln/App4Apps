@@ -6,11 +6,6 @@ import markov.chain_builder as chain
 
 
 
-<<<<<<< HEAD
-@app.route('/')
-@app.route('/index')	
-=======
-	
 @app.route('/')	
 def home():
 	return render_template("home_page.html")
@@ -18,7 +13,6 @@ def home():
 
 
 
->>>>>>> d8eced0ad85ff8e15adf84a73386c1485edf6edd
 @app.route('/gen')
 def generator():
 	
