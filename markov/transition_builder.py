@@ -18,7 +18,7 @@ def getFirstWords(txt):
 		except:
 			pass
 
-	return firstLetters 
+	return firstLetters
 
 
 def generate():
@@ -40,35 +40,35 @@ def fillDicts(firstOrder, secondOrder, text):
 		add(firstOrder, text[i], text[i+1])
 		if i != len(text)-2:
 			add(secondOrder, text[i], text[i+2])
-			
+
 def add(chainDict, word1, word2):
 	if word1 not in chainDict.keys():
 		chainDict[word1] = list()
 	chainDict[word1].append(word2)
-	
+
 def toFreqDict(fDict):
 	for each in fDict:
 		tmpL = fDict[each]
 		fDict[each] = toFreqList(tmpL)
-	
+
 def toFreqList(fList):
 	fList = {x:fList.count(x) for x in fList}
 	return fList
 
 def readFile():
-	try:
-		f = open('corpus/corpus.txt', 'r')
-	else:
-		f = open('../../home/saulgill/saulgill-site/corpus/corpus.txt', 'r')
+	#try:
+	#	f = open('corpus/corpus.txt', 'r')
+	#except:
+	f = open('../../home/saulgill/saulgill-site/corpus/corpus.txt', 'r')
 	txt = f.read()
 	return txt
 
 
-	
-	
-	
-	
-	
+
+
+
+
+
 print "set up Text"
 first, text = setupText()
 
@@ -76,6 +76,6 @@ first, text = setupText()
 print "create dictionaries"
 firstOrder = dict()
 secondOrder = dict()
-		
+
 first = makeDicts(firstOrder, secondOrder, text, first)
 print "finished"
