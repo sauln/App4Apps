@@ -6,12 +6,8 @@ import markov.chain_builder as chain
 
 
 
-@app.route('/')
-def home():
-    return 'hello world'
 	
-	
-	
+@app.route('/')	
 @app.route('/gen')
 def genNew():
 	
