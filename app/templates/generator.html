@@ -1,5 +1,12 @@
 <!DOCTYPE HTML>
 {% extends "layout.html" %}
 {% block content %}
+<p>App4Apps is an app idea generator developed by Miles Saul and Nathaniel Saul
+   that uses markov chains to randomly generate an app description. Several of 
+   the descriptions from the top apps in the Google Play are scraped and used 
+   to generate a new app description from of probabilities based off of word 
+   order and frequency.</p>
+<hr>
+<h2>Description:</h2>
 <p>{{ generated_text }}</p>
 {% endblock %}
