@@ -1,2 +1,2 @@
 #!/bin/bash
-scrapy crawl apper
+scrapy crawl apper -a category=$1
