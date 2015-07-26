@@ -1,5 +1,5 @@
-def setupText():
-	feedstock = readFile()
+def setupText(category):
+	feedstock = readFile(category)
 	first = getFirstWords(feedstock)
 	text = feedstock.lower().split()
 	return first, text
@@ -24,7 +24,7 @@ def getFirstWords(txt):
 def generate():
     firstOrder = dict()
     secondOrder = dict()
-    first, text = setupText()
+    first, text = setupText(category)
     first = makeDicts(firstOrder, secondOrder, text, first)
     #return buildChain(firstOrder, secondOrder,first)
 
@@ -55,14 +55,14 @@ def toFreqList(fList):
 	fList = {x:fList.count(x) for x in fList}
 	return fList
 
-def readFile():
+def readFile(category):
 	#try:
 	#	f = open('corpus/corpus.txt', 'r')
 	#except:
 	try:
-		f = open('../../home/saulgill/saulgill-site/corpus/corpus.txt', 'r')
+		f = open('../../home/saulgill/saulgill-site/corpus/corpus_' + category + 'txt', 'r')
 	except:
-		f = open('corpus/corpus.txt', 'r')
+		f = open('corpus/corpus_' + category + '.txt', 'r')
 		pass
 	
 	txt = f.read()
@@ -73,14 +73,15 @@ def readFile():
 
 
 
+def go(category):
+    print "set up Text"
+    first, text = setupText(category)
 
-print "set up Text"
-first, text = setupText()
 
+    print "create dictionaries"
+    firstOrder = dict()
+    secondOrder = dict()
 
-print "create dictionaries"
-firstOrder = dict()
-secondOrder = dict()
-
-first = makeDicts(firstOrder, secondOrder, text, first)
-print "finished"
+    first = makeDicts(firstOrder, secondOrder, text, first)
+    print "finished"
+    return firstOrder, secondOrder, first

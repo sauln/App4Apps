@@ -12,10 +12,12 @@ class SimpleForm(Form):
 @app.route('/gen')
 def generator():
     form = SimpleForm()
+    generated_text=''
     if form.validate_on_submit():
         print form.example.data
+        firstOrder, secondOrder, first = tran.go(form.example.data)
+        generated_text = chain.buildChain(firstOrder, secondOrder, first)
     else:
         print form.errors
-    generated_text = chain.buildChain(tran.firstOrder, tran.secondOrder, tran.first)
     return render_template("generator.html", generated_text=generated_text, form=form)
 
