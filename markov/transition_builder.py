@@ -60,7 +60,7 @@ def readFile(category):
 	#	f = open('corpus/corpus.txt', 'r')
 	#except:
 	try:
-		f = open('../../home/saulgill/saulgill-site/corpus/corpus_' + category + 'txt', 'r')
+		f = open('../../home/saulgill/saulgill-site/corpus/corpus_' + category + '.txt', 'r')
 	except:
 		f = open('corpus/corpus_' + category + '.txt', 'r')
 		pass
