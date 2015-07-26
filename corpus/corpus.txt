@@ -1,15 +1,46 @@
-The concept of a Taylor series was discovered by the Scottish mathematician James Gregory and formally introduced by the English mathematician Brook Taylor in 1715. 
-
-If the Taylor series is centered at zero, then that series is also called a Maclaurin series, named after the Scottish mathematician Colin Maclaurin, who made extensive use of this special case of Taylor series in the 18th century. 
-
-It is common practice to approximate a function by using a finite number of terms of its Taylor series. 
-
-Taylor's theorem gives quantitative estimates on the error in this approximation. 
-
-Any finite number of initial terms of the Taylor series of a function is called a Taylor polynomial. 
-
-The Taylor series of a function is the limit of that function's Taylor polynomials, provided that the limit exists. 
-
-A function may not be equal to its Taylor series, even if its Taylor series converges at every point. 
-
-A function that is equal to its Taylor series in an open interval or a disc in the complex plane is known as an analytic function in that interval.
+  Escape the Rat Race 
+  Expenses, Bills, Budget and Accounts -  All seamlessly integrated in one app! 
+  All expenses at a glance. 
+  Easy and efficient personal finance manager and expense tracker. Pro version 
+  A simple, intuitive, feature-rich checkbook application 
+  Get a grip on your finances with Molovi Software's Checkbook Pro! 
+  HP 12c Calculator app is now available for business professionals and students. 
+  Balance your checkbook with a simple app and track your expenses. 
+  Best. Financial Calculator. Ever. Based on HP 10bII, but easier to use! 
+  Quickly gets your EPPICard balance in ALL states!!! 
+  Display your Verizon Wireless usage data in a widget on your home screen! 
+  Have all your accounts, transactions, budgets and bills in one place. With sync! 
+  Do it, do it now! See what it takes to become Debt Free! 
+  Save money with this personal money manager, so simple to track your spending!! 
+  Download original "HOME BUDGET MANAGER" here.
+  Real-time Quotes Earning Calendar With Stock Chart, Earning History and Research 
+   
+  Smart Receipts. A Better Receipt Scanner. 
+  Expense out of control? Expense Manager Pro to help. Simple, Intuitive and Easy. 
+  TipSee is far and away the leading Tip Tracking app by downloads.
+  Financial Calculator is simple, yet powerful and accurate intuitive calculator. 
+  Perfect solution to track mileage from anywhere and at anytime. 
+  No more late payments! 
+  Track your miles/km...get your deduction! 
+  Get to know your credit. Free credit scores, reports and tips on how to improve. 
+  Our Chase Mobile App makes it easy for you to bank on the go 24/7. 
+  The Bank of America app lets you easily view balances, make transfers, and more. 
+  Wells Fargo Mobile allows you to access your investment and bank accounts. 
+  Pay Smarter. Pay Simpler. Pay Anywhere. 
+  An easier way to pay 
+  GEICO Mobile: Stunning. Simple. Smart. 
+  Round Up Daily Purchases and Invest the Change into a Diversified Portfolio. 
+  Send money for free. Cash out to any bank overnight. 
+  Quickly exchange money with friends for free, or get paid for your business. 
+  Manage your Discover account conveniently from anywhere. 
+  Track, budget and manage your money with Mint: Finance, Budgets & Money 
+  USAA gives you immediate and secure account access from your mobile device. 
+  Now you can find savings, explore rewards, and manage your account on the go. 
+  Easy, quick access to your Money Network Account information anytime, anywhere! 
+  Follow your favorite stocks and get quotes, personalized news and alerts 
+  Transfer money from your mobile device with Western Union. 
+  Managing your money just got easier. Get the new Mobile app. 
+  Manage Citi accounts Almost Anywhere, Anytime. 
+  Free credit score & monitoring. Save on credit card, loan, mortgage & banking 
+  Banking made beautiful. 
+  Get 24/7 access to PNC Bank accounts and find the nearest branch or ATM. 

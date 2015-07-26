@@ -110,3 +110,13 @@ nav > ul > li > div ul > li > a {
 nav > ul > li > div ul > li:hover > a {
   background-color: rgba( 255, 255, 255, 0.1);
 }
+
+p {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+h1 {
+    margin-left: 20%;
+    margin-right: 20%;
+}
