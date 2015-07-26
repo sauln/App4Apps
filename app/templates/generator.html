@@ -7,14 +7,12 @@
    to generate a new app description from of probabilities based off of word 
    order and frequency.</p>
 
-   <form>
-       <input type="radio" name="category" value="books" checked>Books
-       <input type="radio" name="category" value="business">Business
-       <input type="radio" name="category" value="communication">Communication
-       <input type="radio" name="category" value="education">Education
-       <input type="radio" name="category" value="finance">Finance
 
-   </form> 
+<form method="post">
+    {{ form.hidden_tag() }}
+    {{ form.example }}
+    <input type="submit">
+</form>
 <hr>
 <h2>Description:</h2>
 <p>{{ generated_text }}</p>
