@@ -13,7 +13,7 @@ def buildChain(firstOrder, secondOrder, first):
 	
 	newText = firstWord + " " + secondWord
 
-	for _ in xrange(80):
+	for _ in xrange(100):
 		newD = merge(firstOrder,  secondOrder, firstWord, secondWord)
 		
 		firstWord = secondWord	
