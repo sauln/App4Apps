@@ -6,7 +6,25 @@
    the descriptions from the top apps in the Google Play are scraped and used 
    to generate a new app description from of probabilities based off of word 
    order and frequency.</p>
+
+   <form>
+       <input type="radio" name="category" value="books" checked>Books
+       <input type="radio" name="category" value="business">Business
+       <input type="radio" name="category" value="communication">Communication
+       <input type="radio" name="category" value="education">Education
+       <input type="radio" name="category" value="finance">Finance
+
+   </form> 
 <hr>
 <h2>Description:</h2>
 <p>{{ generated_text }}</p>
+<div class="button_wrapper">
+    <button class="refresh" onclick="myFunction()">Reload page</button>
+</div>
+<script>
+function myFunction() {
+        location.reload();
+}
+
+</script>
 {% endblock %}
