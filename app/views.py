@@ -5,7 +5,7 @@ from flask.ext.wtf import Form
 from wtforms import RadioField
 
 class SimpleForm(Form):
-    example = RadioField('Label', choices=[('business','Business'),('communication','Communication'), ('education', 'Education'), ('entertainment', 'Entertainment')])
+    example = RadioField('Label', choices=[('business','Business '),('communication','Communication '), ('education', 'Education '), ('entertainment', 'Entertainment '), ('finance', 'Finance '), ('medical', 'Medical '), ('photography', 'Photography '), ('social', 'Social '), ('sports', 'Sports ')])
 
 @app.route('/index', methods=['GET', 'POST'])
 @app.route('/', methods=['GET', 'POST'])	
