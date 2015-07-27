@@ -1,8 +1,11 @@
 from app import app, render_template
+
+
 import markov.transition_builder as tran
 import markov.chain_builder as chain
 from flask.ext.wtf import Form
 from wtforms import RadioField
+
 
 class SimpleForm(Form):
     example = RadioField('Label', choices=[('business','Business '),('communication','Communication '), ('education', 'Education '), ('entertainment', 'Entertainment '), ('finance', 'Finance '), ('medical', 'Medical '), ('photography', 'Photography '), ('social', 'Social '), ('sports', 'Sports ')])
