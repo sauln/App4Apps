@@ -1,72 +1,3 @@
-def setupText():
-	feedstock = readFile()
-	first = getFirstWords(feedstock)
-	text = feedstock.lower().split()
-	return first, text
-
-
-def getFirstWords(txt):
-	firstLetters = []
-	#split by sentences
-	sent = txt.lower().split('.')
-
-	#add just the first words of each sentence
-	for each in sent:
-		each = each.split()
-		try:
-			firstLetters.append(each[0])
-		except:
-			pass
-
-	return firstLetters
-
-
-def generate():
-    firstOrder = dict()
-    secondOrder = dict()
-    first, text = setupText()
-    first = makeDicts(firstOrder, secondOrder, text, first)
-    #return buildChain(firstOrder, secondOrder,first)
-
-def makeDicts(firstOrder, secondOrder, text, first):
-	fillDicts(firstOrder, secondOrder, text)
-	toFreqDict(firstOrder)
-	toFreqDict(secondOrder)
-	first = toFreqList(first)
-	return first
-
-def fillDicts(firstOrder, secondOrder, text):
-	for i in xrange(len(text)-1):
-		add(firstOrder, text[i], text[i+1])
-		if i != len(text)-2:
-			add(secondOrder, text[i], text[i+2])
-
-def add(chainDict, word1, word2):
-	if word1 not in chainDict.keys():
-		chainDict[word1] = list()
-	chainDict[word1].append(word2)
-
-def toFreqDict(fDict):
-	for each in fDict:
-		tmpL = fDict[each]
-		fDict[each] = toFreqList(tmpL)
-
-def toFreqList(fList):
-	fList = {x:fList.count(x) for x in fList}
-	return fList
-
-def readFile():
-	#try:
-	#	f = open('corpus/corpus.txt', 'r')
-	#except:
-	try:
-		f = open('../../home/saulgill/saulgill-site/corpus/corpus.txt', 'r')
-	except:
-		f = open('corpus/corpus.txt', 'r')
-		pass
-	
-	txt = f.read()
-	return txt
 
 
 
@@ -74,13 +5,125 @@ def readFile():
 
 
 
-print "set up Text"
-first, text = setupText()
 
 
-print "create dictionaries"
-firstOrder = dict()
-secondOrder = dict()
 
-first = makeDicts(firstOrder, secondOrder, text, first)
-print "finished"
+
+
+
+
+class transition_dictionary():
+    
+    
+    def __init__(self, category):
+    	print "set up Text"
+    	self.first, text = self.setupText(category)
+    		
+    	print "create dictionaries"
+    	self.firstOrder = dict()
+    	self.secondOrder = dict()
+    
+    	#first = self.makeDicts(self.firstOrder, self.secondOrder, text, first)
+    	print "finished"
+        
+
+
+    def setupText(self, category):
+    	feedstock = self.readFile(category)
+    	first = self.getFirstWords(feedstock)
+    	text = feedstock.lower().split()
+    	return first, text
+
+    def makeDicts(self, firstOrder, secondOrder, text, first):
+    	fillDicts(firstOrder, secondOrder, text)
+    	toFreqDict(firstOrder)
+    	toFreqDict(secondOrder)
+    	first = self.toFreqList(first)
+    	return first
+
+
+    def readFile(self, category):
+    	#try:
+    	#	f = open('corpus/corpus.txt', 'r')
+    	#except:
+    	
+    	f_cat = "corpus_" + category + ".txt"
+    	try:
+    		f = open('../../home/saulgill/saulgill-site/corpus/'+ f_cat, 'r')
+    	except:
+    		f = open('../corpus/' + f_cat, 'r')
+    		pass
+    	
+    	txt = f.read()
+    	return txt
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    def getFirstWords(self, txt):
+    	firstLetters = []
+    	#split by sentences
+    	sent = txt.lower().split('.')
+    
+    	#add just the first words of each sentence
+    	for each in sent:
+    		each = each.split()
+    		try:
+    			firstLetters.append(each[0])
+    		except:
+    			pass
+    
+    	return firstLetters
+        
+    
+    def generate(self):
+        firstOrder = dict()
+        secondOrder = dict()
+        first, text = setupText()
+        first = makeDicts(firstOrder, secondOrder, text, first)
+        #return buildChain(firstOrder, secondOrder,first)
+    
+
+    
+    def fillDicts(self, firstOrder, secondOrder, text):
+    	for i in xrange(len(text)-1):
+    		add(firstOrder, text[i], text[i+1])
+    		if i != len(text)-2:
+    			add(secondOrder, text[i], text[i+2])
+    
+    def add(self, chainDict, word1, word2):
+    	if word1 not in chainDict.keys():
+    		chainDict[word1] = list()
+    	chainDict[word1].append(word2)
+
+    def toFreqDict(self, fDict):
+    	for each in fDict:
+    		tmpL = fDict[each]
+    		fDict[each] = toFreqList(tmpL)
+    
+    def toFreqList(self, fList):
+    	fList = {x:fList.count(x) for x in fList}
+    	return fList
+    
+

@@ -1,6 +1,13 @@
 from app import app, render_template
+
+
 import markov.transition_builder as tran
 import markov.chain_builder as chain
+
+
+tran.initiate("business")
+
+
 
 @app.route('/index')
 @app.route('/')	
