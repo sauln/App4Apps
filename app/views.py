@@ -14,12 +14,19 @@ def generator():
     form = SimpleForm()
     generated_text=''
     prev = ''
+    done=False
     if form.validate_on_submit():
         print form.example.data
-        if form.example.data != prev:
-            firstOrder, secondOrder, first = tran.go(form.example.data)
-            prev = form.example.data
-        generated_text = chain.buildChain(firstOrder, secondOrder, first)
+        while not done:
+            try:
+                if form.example.data != prev:
+                    firstOrder, secondOrder, first = tran.go(form.example.data)
+                    prev = form.example.data
+                generated_text = chain.buildChain(firstOrder, secondOrder, first)
+                done=True
+            except:
+                generated_text=''
+                continue
     else:
         print form.errors
     return render_template("generator.html", generated_text=generated_text, form=form)

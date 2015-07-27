@@ -1,6 +1,12 @@
 .categories * {
     display: inline;
     text-decoration: none;
+    font-size: 14px;
+}
+
+.submit_button {
+    width: 100px;
+    height: 30px;
 }
 
 .content {
@@ -119,4 +125,8 @@ nav > ul > li > div ul > li > a {
 
 nav > ul > li > div ul > li:hover > a {
   background-color: rgba( 255, 255, 255, 0.1);
+}
+
+p {
+    font-size: 16px;
 }

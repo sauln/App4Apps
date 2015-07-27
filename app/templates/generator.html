@@ -7,12 +7,13 @@
    to generate a new app description from of probabilities based off of word 
    order and frequency.</p>
 
-
+<div class="forms">
 <form method="post">
     {{ form.hidden_tag() }}
     {{ form.example(class_='categories') }}
-    <input type="submit">
+    <input class="submit_button" type="submit" title="Generator" value="Generate">
 </form>
+</div>
 <hr>
 <h2>Description:</h2>
 <p>{{ generated_text }}</p>
