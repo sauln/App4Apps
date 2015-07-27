@@ -61,26 +61,6 @@ class transition_dictionary():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     def getFirstWords(self, txt):
     	firstLetters = []
     	#split by sentences
