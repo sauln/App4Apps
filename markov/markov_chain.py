@@ -10,7 +10,7 @@ import pickle
 
 
 def load_dictionary(category):
-    return pickle.load(open('dictionaries/markov_'+category+'.p')) 
+    return pickle.load(open('markov/dictionaries/markov_'+category+'.p')) 
     
 def gen_new_chain(mc):
     return mc.buildChain()

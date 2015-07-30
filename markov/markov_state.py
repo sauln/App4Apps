@@ -22,7 +22,7 @@ class markov_state():
         
         
         
-    def buildChain(self, length):
+    def buildChain(self, length=50):
     	#these are the seed words
     
         first_word = self.getNextWord(self.first_words)

@@ -1,33 +1,28 @@
-<<<<<<< HEAD
+
 def setupText(category):
 	feedstock = readFile(category)
 	first = getFirstWords(feedstock)
 	text = feedstock.lower().split()
 	return first, text
-=======
->>>>>>> origin/markov-revamp
 
 
 
 
 
 
-<<<<<<< HEAD
 def generate():
     firstOrder = dict()
     secondOrder = dict()
     first, text = setupText(category)
     first = makeDicts(firstOrder, secondOrder, text, first)
     #return buildChain(firstOrder, secondOrder,first)
-=======
->>>>>>> origin/markov-revamp
 
 
 
 
 
 
-<<<<<<< HEAD
+
 def readFile(category):
 	#try:
 	#	f = open('corpus/corpus.txt', 'r')
@@ -40,8 +35,7 @@ def readFile(category):
 	
 	txt = f.read()
 	return txt
-=======
->>>>>>> origin/markov-revamp
+
 
 
 class transition_dictionary():

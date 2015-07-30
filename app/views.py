@@ -1,14 +1,31 @@
 from app import app, render_template
 
 
-import markov.transition_builder as tran
-import markov.chain_builder as chain
+#import markov.transition_builder as tran
+#import markov.chain_builder as chain
+
+import markov.markov_chain as markov
+
+mc = markov.load_dictionary("business")
+g = mc.buildChain(50)
+
+
+
+
 from flask.ext.wtf import Form
 from wtforms import RadioField
 
 
 class SimpleForm(Form):
-    example = RadioField('Label', choices=[('business','Business '),('communication','Communication '), ('education', 'Education '), ('entertainment', 'Entertainment '), ('finance', 'Finance '), ('medical', 'Medical '), ('photography', 'Photography '), ('social', 'Social '), ('sports', 'Sports ')])
+    example = RadioField('Label', choices=[('business','Business '),
+                                           ('communication','Communication '), 
+                                           ('education', 'Education '), 
+                                           ('entertainment', 'Entertainment '), 
+                                           ('finance', 'Finance '), 
+                                           ('medical', 'Medical '), 
+                                           ('photography', 'Photography '), 
+                                           ('social', 'Social '), 
+                                           ('sports', 'Sports ')])
 
 @app.route('/index', methods=['GET', 'POST'])
 @app.route('/', methods=['GET', 'POST'])	
@@ -19,13 +36,15 @@ def generator():
     prev = ''
     done=False
     if form.validate_on_submit():
+        
         print form.example.data
         while not done:
             try:
                 if form.example.data != prev:
-                    firstOrder, secondOrder, first = tran.go(form.example.data)
+                    #firstOrder, secondOrder, first = tran.go(form.example.data)
                     prev = form.example.data
-                generated_text = chain.buildChain(firstOrder, secondOrder, first)
+                generated_text = mc.buildChain(50)
+                #generated_text = chain.buildChain(firstOrder, secondOrder, first)
                 done=True
             except:
                 generated_text=''
