@@ -7,9 +7,11 @@ from app import app, render_template
 import markov.markov_chain as markov
 
 mc = dict()
-mc["business"] = markov.load_dictionary("business")
-mc["education"] = markov.load_dictionary("education")
 
+categories = [ "business", "education", "finance", "test"]
+
+for each in categories:
+	mc[each] = markov.load_dictionary(each)
 
 
 
@@ -29,14 +31,16 @@ from wtforms import RadioField
 
 class SimpleForm(Form):
     example = RadioField('Label', choices=[('business','Business '),
-                                           ('communication','Communication '), 
+											('test', 'Test'),
+                                           #('communication','Communication '), 
                                            ('education', 'Education '), 
-                                           ('entertainment', 'Entertainment '), 
+                                           #('entertainment', 'Entertainment '), 
                                            ('finance', 'Finance '), 
-                                           ('medical', 'Medical '), 
-                                           ('photography', 'Photography '), 
-                                           ('social', 'Social '), 
-                                           ('sports', 'Sports ')])
+                                           #('medical', 'Medical '), 
+                                           #('photography', 'Photography '), 
+                                           #('social', 'Social '), 
+                                           #('sports', 'Sports ')
+										   ])
 
 										   
 										   
