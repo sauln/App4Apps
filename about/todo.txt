@@ -1,6 +1,12 @@
-Create a more robust chain.
+crawler:
 
-Create prettier UI.
+http://doc.scrapy.org/en/0.24/intro/tutorial.html#intro-tutorial
+1 Update Scrapy to search for links instead
+2 Follow links to get full app descriptions
+3 Think of ways to optimize markov chain algorithm
+4 Work on description of app to be displayed on website
+5 Improve website design
 
-Create great documentation.
  
+ Origins of financial pages are:
+ https://play.google.com/store/apps/category/FINANCE/collection/topselling_paid?hl=en
