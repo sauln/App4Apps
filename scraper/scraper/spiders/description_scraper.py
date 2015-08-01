@@ -7,8 +7,9 @@ class DescriptionScraper(scrapy.Spider):
     def __init__(self, category=""):
         self.category=category
         self.start_urls = [
-            "https://play.google.com/store/apps/category/FINANCE/collection/topselling_paid"
-                                                                    ]
+            "https://play.google.com/store/apps/category/" + self.category.upper() + "/collection/topselling_paid",
+            "https://play.google.com/store/apps/category/" + self.category.upper() + "/collection/topselling_free"
+        ]
         self.f = open('../corpus/corpus_' + self.category.lower() + '.txt', 'w')
         self.urls_parsed = 0
         allowed_domains = ["play.google.com"]
@@ -20,14 +21,16 @@ class DescriptionScraper(scrapy.Spider):
             yield scrapy.Request(url, callback=self.parse_dir_contents)
 
     def parse_dir_contents(self, response):
-        for sel in response.xpath('//*[contains(@class, "id-app-orig-desc")]'):
+        for sel in response.xpath('//div[contains(@class, "id-app-orig-desc")]'):
             item = AppItem()
             item['desc'] = sel.xpath('text()').extract()[0]
+            for p in sel.xpath('.//p'):
+                item['desc'] += p.extract()
             print item['desc']
-            '''try: 
+            try: 
                 self.f.write(item['desc'] + '\n')
             except:
                 continue
         self.urls_parsed += 1
         if self.urls_parsed > 1:
-            self.f.close()'''
+            self.f.close()
