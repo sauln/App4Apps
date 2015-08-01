@@ -8,10 +8,6 @@ Created on Sun Jul 26 18:40:53 2015
 
 
 
-attempting to rewrite the markov chain
-
-
-
 """
 
 
@@ -38,16 +34,7 @@ class markov_state_space():
         
         print "generate first and second order dictionaries"
         self.first_order, self.second_order  = self.make_dictionaries(text_2)
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+   
         
         
     def setupText(self, category):
@@ -63,13 +50,15 @@ class markov_state_space():
         
     def strip_all(self, text):
         # we want to remove things like "key features" and references to the app names
+        # this processing should be done in its own script
+    
         print "NOT YET IMPLEMENTED: remove all the erroneous characters"
         text_2 = text.replace('\n','.').replace('\x80\x9d', ' ').replace(
                         '\xe2\x80\xa2', ' ').replace('\xe2\x80\x9c', ' ').replace(
                         '\xe2\x97\x8f', ' ').replace('\xe2',' ').replace('"9', ' ').replace(
                         '\x98\x85',' ').replace('"' ,' ').replace('\x80', ' ').replace(
                         '\x99', ' ').replace('(',' ').replace(')', ' ').replace(
-                        '..', '.').replace('...', '.')
+                        '...', '.').replace('.', '')
                         
         text_2 = text_2.lower()
 

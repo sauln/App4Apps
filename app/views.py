@@ -7,6 +7,7 @@ from app import app, render_template
 import markov.markov_chain as markov
 
 mc = markov.load_dictionary("business")
+
 g = mc.buildChain(50)
 
 
