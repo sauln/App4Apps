@@ -6,9 +6,19 @@ from app import app, render_template
 
 import markov.markov_chain as markov
 
-mc = markov.load_dictionary("business")
+mc = dict()
+mc["business"] = markov.load_dictionary("business")
+mc["education"] = markov.load_dictionary("education")
 
-g = mc.buildChain(50)
+
+
+
+
+
+
+
+
+#g = mc.buildChain(50)
 
 
 
@@ -28,29 +38,24 @@ class SimpleForm(Form):
                                            ('social', 'Social '), 
                                            ('sports', 'Sports ')])
 
+										   
+										   
 @app.route('/index', methods=['GET', 'POST'])
 @app.route('/', methods=['GET', 'POST'])	
 @app.route('/gen', methods=['GET', 'POST'])
+
+
 def generator():
     form = SimpleForm()
     generated_text=''
     prev = ''
     done=False
     if form.validate_on_submit():
-        
-        print form.example.data
-        while not done:
-            try:
-                if form.example.data != prev:
-                    #firstOrder, secondOrder, first = tran.go(form.example.data)
-                    prev = form.example.data
-                generated_text = mc.buildChain(50)
-                #generated_text = chain.buildChain(firstOrder, secondOrder, first)
-                done=True
-            except:
-                generated_text=''
-                continue
+		print form.example.data
+		generated_text = mc[form.example.data].buildChain(50)
     else:
         print form.errors
+		
+		
     return render_template("generator.html", generated_text=generated_text, form=form)
 
