@@ -7,7 +7,20 @@ Created on Sun Jul 26 20:17:54 2015
 
 
 
+This class is responsible for generating the markov chain.
+
+It contains the necessary frequency dictionaries and functions, and that's it.
+
+Meant to be trimmed down version essential for the site.
+
+
 """
+
+
+
+
+
+
 
 import random
 

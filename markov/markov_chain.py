@@ -3,6 +3,15 @@
 Created on Sun Jul 26 23:11:49 2015
 
 @author: nathaniel
+
+
+this is the interface for the app4apps.
+
+All it needs to do is load which dictionary it wants, and to build a new chain with that dictionary
+
+
+
+
 """
 
 import pickle

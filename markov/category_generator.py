@@ -4,6 +4,8 @@
 #import markov.transition_builder as tb
 #import markov.chain_builder as chain
 
+
+
 import pickle
 
 import markov.markov_state_space_creator as ms_make
@@ -14,6 +16,7 @@ import markov.markov_state as ms
 
                 
 def test_dictionary(chain):
+	#TODO: make this more robust
     for each in chain.first_words.keys():
         try:
             chain.first_order[each]
@@ -26,8 +29,9 @@ def test_dictionary(chain):
 
 categories = ["test", "business", "finance", "education"]
 
-
+#create dictionaries for each of the categories.
 for each in categories:
+    
     chain_creator = ms_make.markov_state_space(each)
     
     test_dictionary(chain_creator)

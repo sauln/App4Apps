@@ -6,8 +6,21 @@ from app import app, render_template
 
 import markov.markov_chain as markov
 
-mc = markov.load_dictionary("business")
-g = mc.buildChain(50)
+mc = dict()
+
+categories = [ "business", "education", "finance", "test"]
+
+for each in categories:
+	mc[each] = markov.load_dictionary(each)
+
+
+
+
+
+
+
+
+#g = mc.buildChain(50)
 
 
 
@@ -18,38 +31,35 @@ from wtforms import RadioField
 
 class SimpleForm(Form):
     example = RadioField('Label', choices=[('business','Business '),
-                                           ('communication','Communication '), 
+											('test', 'Test'),
+                                           #('communication','Communication '), 
                                            ('education', 'Education '), 
-                                           ('entertainment', 'Entertainment '), 
+                                           #('entertainment', 'Entertainment '), 
                                            ('finance', 'Finance '), 
-                                           ('medical', 'Medical '), 
-                                           ('photography', 'Photography '), 
-                                           ('social', 'Social '), 
-                                           ('sports', 'Sports ')])
+                                           #('medical', 'Medical '), 
+                                           #('photography', 'Photography '), 
+                                           #('social', 'Social '), 
+                                           #('sports', 'Sports ')
+										   ])
 
+										   
+										   
 @app.route('/index', methods=['GET', 'POST'])
 @app.route('/', methods=['GET', 'POST'])	
 @app.route('/gen', methods=['GET', 'POST'])
+
+
 def generator():
     form = SimpleForm()
     generated_text=''
     prev = ''
     done=False
     if form.validate_on_submit():
-        
-        print form.example.data
-        while not done:
-            try:
-                if form.example.data != prev:
-                    #firstOrder, secondOrder, first = tran.go(form.example.data)
-                    prev = form.example.data
-                generated_text = mc.buildChain(50)
-                #generated_text = chain.buildChain(firstOrder, secondOrder, first)
-                done=True
-            except:
-                generated_text=''
-                continue
+		print form.example.data
+		generated_text = mc[form.example.data].buildChain(50)
     else:
         print form.errors
+		
+		
     return render_template("generator.html", generated_text=generated_text, form=form)
 
