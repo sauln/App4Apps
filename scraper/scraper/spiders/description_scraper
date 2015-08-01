@@ -10,7 +10,7 @@ class DescriptionScraper(scrapy.Spider):
     ]
 
     def parse(self, response):
-        for href in response.xpath('//'):
+        for href in response.xpath('//a[contains(@class, "title")]/[contains(@href, "/store/app/details")]/@href'):
             url = response.urljoin(href.extract())
             yield scrapy.Request(url, callback=self.parse_dir_contents)
 
