@@ -28,9 +28,13 @@ class DescriptionScraper(scrapy.Spider):
                 item['desc'] = sel.xpath('text()').extract()[0] + '\n'
                 for p in sel.xpath('.//p'):
                     item['desc'] += p.extract() + '\n'
-                item['desc'] = replace_bad_characters(item['desc'])
                 print item['desc']
-                self.f.write(item['desc'] + '\n')
+                try:
+                    self.f.write(item['desc'] + '\n')
+                except:
+                    item['desc'] = replace_bad_characters(item['desc'])
+                    self.f.write(item['desc'] + '\n')
+                    continue
 
 def replace_bad_characters(string):
     string = string.replace(u'\u2019', '')
