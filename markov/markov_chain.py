@@ -19,8 +19,11 @@ import pickle
 
 
 def load_dictionary(category):
-    return pickle.load(open('../../home/saulgill/saulgill-site/markov/dictionaries/markov_'+category+'.p'))
-    #return pickle.load(open('markov/dictionaries/markov_'+category+'.p')) 
+    try:
+        f = pickle.load(open('../../home/saulgill/saulgill-site/markov/dictionaries/markov_'+category+'.p'))
+    except:
+        f = pickle.load(open('markov/dictionaries/markov_'+category+'.p'))
+    return f 
     
 def gen_new_chain(mc):
     return mc.buildChain()
