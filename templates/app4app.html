@@ -17,15 +17,27 @@ Going to implement the text generation as a services layer
 
 
 
-<form method="POST">
-{{form.as_p}}
 
-	{% csrf_token %}
+<form class="form-horizontal well" role="form" method="POST">
+	<div class="btn-group option_type" data-toggle="buttons">
+		
+	
+	  {% for choice in form.option %}
+		<label class="btn btn-primary {% if category == choice.choice_value %} active {% endif %} ">
+		<input type="radio"  
+			{% if category == choice.choice_value  %} checked="checked" {% endif %}
+			value={{ choice.choice_value }} 
+			name={{ choice.name }} > 
+			{{ choice.choice_label }}
+		</label>
+	  {% endfor %}
+	</div>
+
+{% csrf_token %}
   <input type="submit" name="generate" 
   	value="Generate text" id="gen" class="btn btn-primary">
+
 </form>
-
-
 <!--
 
 
@@ -59,7 +71,6 @@ check out django docs for rendering form fields manually - this way I can use bo
 	<p>
 		{{ fauxText }}
 	</p>
-
 
 
 {% endblock %}
