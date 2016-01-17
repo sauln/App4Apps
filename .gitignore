@@ -189,6 +189,8 @@ $RECYCLE.BIN/
 ## Python
 #############
 
+migrations/
+
 *.py[cod]
 
 # Packages
