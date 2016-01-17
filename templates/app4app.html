@@ -17,11 +17,50 @@ Going to implement the text generation as a services layer
 
 
 
+<form method="POST">
+{{form.as_p}}
 
+	{% csrf_token %}
+  <input type="submit" name="generate" 
+  	value="Generate text" id="gen" class="btn btn-primary">
+</form>
+
+
+<!--
+
+
+<form class="form-horizontal well" role="form" method="POST">
+  <div class="btn-group option_type" data-toggle="buttons">
+	  <label class="btn btn-primary active">
+		  <input type="radio" name="options" id="rbBusiness" value="business">
+		  Business
+	  </label>
+	  <label class="btn btn-primary">
+		  <input type="radio" name="options" id="rbEducation" value="education">
+		  Education
+	  </label>
+	  <label class="btn btn-primary">
+		  <input type="radio" name="options" id="rbFinance" value="finance">
+			Finance
+	  </label>
+  </div>
+  <input type="submit" name="generate" 
+  	value="Generate text" id="gen" class="btn btn-primary">
+
+</form>
+-->
+
+
+<p>
+check out django docs for rendering form fields manually - this way I can use bootstrap css
+</p>
+
+
+	<p>
+		{{ fauxText }}
+	</p>
 
 
 
 {% endblock %}
-
-
 
