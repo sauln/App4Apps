@@ -13,14 +13,3 @@ class App4AppsTest(TestCase):
 		self.assertEqual(found.func, app_page)
 
 
-class TextGenServiceTest(TestCase):
-	def test_returns_backup_text(self):
-		text = new_text("dog")
-		self.assertEqual(text, "This category is not supported.")
-	
-	def test_returns_different_text(self):
-		text1 = new_text("business")
-		text2 = new_text("education")
-		self.assertNotEqual(text1, text2)
-	
-
