@@ -4,7 +4,7 @@ from unittest import skip
 
 
 from app4apps.views import app_page
-from app4apps.services import text_gen
+from app4apps.services import new_text
 
 
 class App4AppsTest(TestCase):
@@ -14,17 +14,13 @@ class App4AppsTest(TestCase):
 
 
 class TextGenServiceTest(TestCase):
-
-
-	def test_returns_text(self):
-		text = text_gen.new()
-		assertEqual(text, "Random Text")
+	def test_returns_backup_text(self):
+		text = new_text("dog")
+		self.assertEqual(text, "This category is not supported.")
 	
-	@skip
 	def test_returns_different_text(self):
-		pass
+		text1 = new_text("business")
+		text2 = new_text("education")
+		self.assertNotEqual(text1, text2)
 	
-	@skip
-	def test_returns_text_associated_to_category(self):
-		pass
 

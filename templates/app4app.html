@@ -1,29 +1,45 @@
 
 {% extends 'base.html' %}
 
+
+<div class="jumbotron">
 {% block header_text %} 
-Hello from app4apps
+App4Apps
 {% endblock %}
+</div>
 
 {% block contents %}
 
-Content of the app4apps site
+<div class="container text-center well">
+App4Apps is an app idea generator
+that uses markov chains to randomly generate an app description. Several of 
+the descriptions from the top apps in the Google Play Store are scraped and used 
+to generate a new app description based off of probabilities calculated from word 
+order and frequency. 
+<br>
+</div>
 
-There will have to be radio buttons for each element.
-There will be a PUT, by pushing the button
-The button grabs the element of the radio button and generates the associated.
 
-Going to implement the text generation as a services layer
+<div class="well text-center">
+<h4>
+Select a category and hit generate to try it out!
+</h4>
 
+<div class="text-center well">
+  <p>
+	{{ fauxText }}
+  </p>
+</div>
 
 
 
 <form class="form-horizontal well" role="form" method="POST">
-	<div class="btn-group option_type" data-toggle="buttons">
+	<div class="btn-group" data-toggle="buttons">
 		
 	
 	  {% for choice in form.option %}
-		<label class="btn btn-primary {% if category == choice.choice_value %} active {% endif %} ">
+		<label class="btn btn-primary 
+			{% if category == choice.choice_value %} active {% endif %} ">
 		<input type="radio"  
 			{% if category == choice.choice_value  %} checked="checked" {% endif %}
 			value={{ choice.choice_value }} 
@@ -34,43 +50,14 @@ Going to implement the text generation as a services layer
 	</div>
 
 {% csrf_token %}
-  <input type="submit" name="generate" 
-  	value="Generate text" id="gen" class="btn btn-primary">
+ <br><br>
+ 
+ <input type="submit" name="generate" 
+  	value="Generate Text" id="gen" class="btn btn-primary">
 
 </form>
-<!--
+</div>
 
-
-<form class="form-horizontal well" role="form" method="POST">
-  <div class="btn-group option_type" data-toggle="buttons">
-	  <label class="btn btn-primary active">
-		  <input type="radio" name="options" id="rbBusiness" value="business">
-		  Business
-	  </label>
-	  <label class="btn btn-primary">
-		  <input type="radio" name="options" id="rbEducation" value="education">
-		  Education
-	  </label>
-	  <label class="btn btn-primary">
-		  <input type="radio" name="options" id="rbFinance" value="finance">
-			Finance
-	  </label>
-  </div>
-  <input type="submit" name="generate" 
-  	value="Generate text" id="gen" class="btn btn-primary">
-
-</form>
--->
-
-
-<p>
-check out django docs for rendering form fields manually - this way I can use bootstrap css
-</p>
-
-
-	<p>
-		{{ fauxText }}
-	</p>
 
 
 {% endblock %}

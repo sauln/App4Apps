@@ -1,17 +1,28 @@
 from django.shortcuts import render
 from app4apps.forms import OptionsRadio
+from app4apps.services import new_text
+
+
+
 
 
 def app_page(request):
 	if request.method == 'POST':
 		form = OptionsRadio(request.POST)
 		if form.is_valid():
-			print(form)
 			value = form.cleaned_data['option']
-		return render(request, 'app4app.html', {'fauxText': "you selected %s"%value, 'form':form, 'category':value})
+			text = new_text(value)
+		return render(request, 'app4app.html', {
+		  		'fauxText':text, 
+				'form':form, 
+				'category':value
+				})
 	else:
 		form = OptionsRadio()
 
-	print(form)
-	return render(request, 'app4app.html', {'fauxText': "Hi How's it going", 'form':form, 'category':'business'})
+
+	return render(request, 'app4app.html', {
+	  		'form':form, 
+			'category':'business'
+			})
 
