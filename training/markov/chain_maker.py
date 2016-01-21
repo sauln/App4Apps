@@ -26,7 +26,10 @@ class markov_state():
 		self.first_words = first_words
 		self.first_order = first_order
 		self.second_order = second_order
-    
+		
+		self.category = 'none yet'
+
+
 	def buildChain(self, length=50):
 		#these are the seed words
 		first_word = self.getNextWord(self.first_words)
@@ -60,7 +63,8 @@ class markov_state():
 		''' Given a dictionary of words and frequencies, 
 		this will generate a new word by random number '''
 	    
-		#TODO this is so naive it is borderline moronic
+		
+		
 		total = 0
 		newTotal = 0
 		for each in newD:

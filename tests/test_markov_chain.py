@@ -41,7 +41,7 @@ class MarkovChainTest(TestCase):
 		desired_length = 50
 		text = chain.text_from_chain(self.mc, desired_length)
 		self.assertEqual(len(text.split()), desired_length, 
-			"Length of text is not 50, but instead %s"%len(text))
+			"Length of text is not 50, but instead %s"%len(text.split()))
 
 
 class ChainMakerTest(TestCase):
