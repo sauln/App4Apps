@@ -1,27 +1,18 @@
 
 
 
-''' I want this to be a call to a RESTFUL api service  '''
-''' I don't know how to keep the model persistent and asynchronous
-	for lots of users querying the model 
-	everyones talking about restful services like this could be the
-	solution '''
-
-
-''' list of possible categories '''
-
-
+from app4apps.training.markov import chain
+from . import mc
 
 
 
 def new_text(category):
-	if category =="business":
-		return "Random text from business"
-	elif category =="education":
-		return "Random text from education"
+	
+	if (category in mc.keys()):
+		return chain.text_from_chain(mc[category]) 
 	else:
-	  	return "This category is not supported."
-
+		return "This category is not supported"
+	
 
 
 
