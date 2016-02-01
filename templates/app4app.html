@@ -2,38 +2,47 @@
 {% extends 'base.html' %}
 
 
-<div class="jumbotron">
-{% block header_text %} 
-App4Apps
-{% endblock %}
-</div>
-
 {% block contents %}
 
+
+<div class="jumbotron">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="text-center">
+				  <h1>
+					App4Apps
+				  </h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
 <div class="container text-center well">
-App4Apps is an app idea generator
-that uses markov chains to randomly generate an app description. Several of 
-the descriptions from the top apps in the Google Play Store are scraped and used 
-to generate a new app description based off of probabilities calculated from word 
-order and frequency. 
-<br>
-
-
-
+	App4Apps is an app idea generator
+	that uses markov chains to randomly generate an app description. Several of 
+	the descriptions from the top apps in the Google Play Store are scraped and used 
+	to generate a new app description based off of probabilities calculated from word 
+	order and frequency. 
 </div>
 
 
 <div class="well text-center">
-<h4>
-Select a category and hit generate to try it out!
-</h4>
+	<h4>
+		Select a category and hit generate to try it out!
+	</h4>
 
-<div class="text-center well">
-  <p>
-	{{ fauxText }}
-  </p>
-</div>
-
+	<div class="text-center well">
+ 		<p>
+			{{ fauxText }}
+  		</p>
+	</div>
 
 
 <form class="form-horizontal well" role="form" method="POST">
@@ -52,11 +61,11 @@ Select a category and hit generate to try it out!
 	  {% endfor %}
 	</div>
 
-{% csrf_token %}
- <br><br>
+	{% csrf_token %}
+ 	<br><br>
  
- <input type="submit" name="generate" 
-  	value="Generate Text" id="gen" class="btn btn-primary">
+ 	<input type="submit" name="generate" 
+  		value="Generate Text" id="gen" class="btn btn-primary">
 
 </form>
 </div>

@@ -22,7 +22,7 @@ class TextGenServiceTest(TestCase):
 
 	def test_returns_no_category(self):
 		text = new_text("dog")
-		self.assertEqual(text, "This category is not supported.")
+		self.assertEqual(text, "This category is not supported")
 	
 	def test_returns_different(self):
 		text1 = new_text("business")
