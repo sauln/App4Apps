@@ -2,7 +2,7 @@
 """
 Created on Sun Jul 26 18:40:53 2015
 
-@author: nathaniel
+@author: Nathaniel Saul, Miles Saul
 
 
 
